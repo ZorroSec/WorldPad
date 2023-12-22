@@ -12,9 +12,9 @@ app.engine('handlebars', engine())
 app.set('view engine', 'handlebars')
 app.use(bodyParser.urlencoded({extended:false}))
 app.use(bodyParser.json())
-app.use('public/', express.static('public/'))
-app.use('public/css/', express.static('public/css/'))
-app.use('public/js/', express.static('public/js/'))
+app.use('/public/', express.static('/public/'))
+app.use('/public/css/', express.static('/public/css/'))
+app.use('/public/js/', express.static('/public/js/'))
 // post.create(
 //     {
 //         Nome: "Zezao",
