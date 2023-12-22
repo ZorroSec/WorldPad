@@ -25,7 +25,7 @@ app.use('public/js/', express.static('public/js/'))
 // })
 app.get('/', (req,res)=>{
     post.findAll().then(data=>{
-        res.render('home', { post: post })
+        res.render('home', { data: Object.entries(data) })
     })
 })
 
