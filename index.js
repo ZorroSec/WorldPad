@@ -1,4 +1,5 @@
 const Sequelize = require("sequelize")
+require("dotenv").config()
 const db = require("./db/db")
 const post = require("./post/post")
 const express = require("express")
@@ -31,7 +32,7 @@ app.get('/', (req,res)=>{
     })
 })
 
-app.listen(3000, (err)=>{
+app.listen(process.env.PORT, (err)=>{
     if(!err){
         console.log({
             message: 'success'
