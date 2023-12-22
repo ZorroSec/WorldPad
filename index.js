@@ -4,6 +4,8 @@ const post = require("./post/post")
 const express = require("express")
 const bodyParser = require("body-parser")
 const { engine } = require("express-handlebars")
+const mysql = require("mysql2")
+const connection = require("./connection/connection")
 const app = express()
 app.engine('handlebars', engine())
 app.set('view engine', 'handlebars')
@@ -24,8 +26,8 @@ app.use('public/js/', express.static('public/js/'))
 //     console.log(data)
 // })
 app.get('/', (req,res)=>{
-    post.findAll().then(data=>{
-        res.render('home', { data: Object.entries(data) })
+    connection.query("SELECT * FROM posts", (results, fields)=>{
+        res.render('home', { data: fields })
     })
 })
 
