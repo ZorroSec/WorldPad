@@ -21,6 +21,10 @@ const Post = db.define('Post',
         DataPost:{
             type: Sequelize.DATE,
             allowNull: false
+        },
+        Path: {
+            type: Sequelize.STRING,
+            allowNull: false
         }
 })
 
