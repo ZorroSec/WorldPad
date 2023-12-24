@@ -33,9 +33,14 @@ app.get('/', (req,res)=>{
 })
 app.get('/post/:id',(req, res)=>{
     // connection.query(`SELECT * FROM posts WHERE id = ${id}`)
+    const { id } = req.params
     console.log(req.params.id)
-    res.json({
-        id: req.params.id
+    connection.query(`SELECT * FROM posts WHERE id = ${id}`, (results, fields)=>{
+        console.log(fields[0]['nome'])
+        // res.json({
+        //     id: fields['id'],
+        //     nome: fields['nome']
+        // })
     })
 })
 app.listen(process.env.PORT, (err)=>{
