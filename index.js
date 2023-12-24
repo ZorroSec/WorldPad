@@ -69,6 +69,12 @@ app.post('/add', (req, res)=>{
     }
     res.render('add', { submitBtn: submitBtn() })
 })
+app.get('/delete/:id', (req, res)=>{
+    connection.query(`DELETE FROM posts WHERE id = ${req.params.id}`, (results, fields)=>{
+        console.log('Deleted!!')
+        res.redirect('/')
+    })
+})
 app.listen(process.env.PORT, (err)=>{
     if(!err){
         console.log({
