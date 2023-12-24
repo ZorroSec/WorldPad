@@ -41,10 +41,10 @@ app.get('/post/:id',(req, res)=>{
     console.log(req.params.id)
     connection.query(`SELECT * FROM posts WHERE id = ${id}`, (results, fields)=>{
         console.log(fields[0]['nome'])
-        res.json({
-            results: fields
-        })
-        
+        // res.json({
+        //     results: fields
+        // })
+        res.render('post', { post: fields })
     })
 })
 app.get('/add', (req, res)=>{
