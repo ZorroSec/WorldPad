@@ -10,7 +10,7 @@ const Post = db.define('Post',
             allowNull: false,
             primaryKey: true
         },
-        Nome:{
+        Title:{
             type: Sequelize.STRING,
             allowNull: false
         },
