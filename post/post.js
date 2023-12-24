@@ -22,10 +22,10 @@ const Post = db.define('Post',
             type: Sequelize.DATE,
             allowNull: false
         },
-        Path: {
-            type: Sequelize.STRING,
-            allowNull: false
-        }
+        // Path: {
+        //     type: Sequelize.STRING,
+        //     allowNull: false
+        // }
 })
 
 module.exports = Post
