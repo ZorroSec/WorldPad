@@ -34,6 +34,9 @@ app.get('/', (req,res)=>{
 app.get('/post/:id',(req, res)=>{
     // connection.query(`SELECT * FROM posts WHERE id = ${id}`)
     console.log(req.params.id)
+    res.json({
+        id: req.params.id
+    })
 })
 app.listen(process.env.PORT, (err)=>{
     if(!err){
