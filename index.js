@@ -51,6 +51,9 @@ app.get('/add', (req, res)=>{
 app.post('/add', upload.single('file'), (req, res)=>{
     function submitBtn(){
         const file = req.file
+        const data = req.body.data
+        const post = req.body.post
+        const nome = req.body.nome
         console.log(file)
     }
     res.render('add', { submitBtn: submitBtn() })
