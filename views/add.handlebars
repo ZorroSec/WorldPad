@@ -42,7 +42,41 @@
             box-shadow: 1px 0 3px rgba(0,0,0,.3);
             padding: 1em;
         }
+        section.conteiner div.addNewPost div.headerAddNewPost{
+            text-align: center;
+        }
+        section.conteiner div.addNewPost form div.newPost div.infoOptionsPost{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        section.conteiner div.addNewPost form div.newPost div.infoOptionsPost div.date input{
+            padding: 10px 20px;
+            width: 100%;
+            border: none;
+            outline: none;
+            background-color: none;
+            border-bottom: 1px solid black;
+            color: black;
 
+        }
+        section.conteiner div.addNewPost form div.newPost div.infoOptionsPost div.submit input{
+            border: none;
+            outline: none;
+            background-color: #23abff;
+            color: white;
+            border-radius: 5px;
+            padding: 10px 20px;
+        }
+        section.conteiner div.addNewPost form div.newPost div.postContent textarea{
+            padding: 10px;
+            color: black;
+            outline: none;
+            width: 100%;
+            resize: none;
+
+        }
     </style>
     <title>Document</title>
 </head>
@@ -68,6 +102,9 @@
                             <div class="date">
                                 <input type="datetime-local" name="data" id="data">
                             </div>
+                            <div class="submit">
+                                <input type="submit" value="Enviar" name="submit" onclick="{{ submitBtn }}">
+                            </div>
                         </div>
                         <div class="postContent">
                             <textarea name="post" id="post" cols="30" rows="10"></textarea>
@@ -82,9 +119,6 @@
                                 <label for="file">Carregar Imgem</label>
                                 <input type="file" name="file" id="file">
                             </div>
-                        </div>
-                        <div class="submit">
-                            <input type="submit" value="Enviar" name="submit" onclick="{{ submitBtn }}">
                         </div>
                     </div>
                 </div>
