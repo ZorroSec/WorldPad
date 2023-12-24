@@ -24,7 +24,7 @@
             box-shadow: 0 0 2.2em rgba(0,0,0,.3);
             font-weight: bold;
         }
-        section.conteiner div.posts div.post{
+        div.post{
             margin: auto;
             padding: 1em;
             color: black;
@@ -33,7 +33,7 @@
             margin-top: 1em;
             margin-bottom: 1em;
         }
-        section.conteiner div.posts div.post div.infoUser{
+        div.post div.infoUser{
             display: flex;
             margin-bottom: 15px;
         }
@@ -61,7 +61,7 @@
     <section class="conteiner">
         {{#each post}}
             <div class="post">
-                <div class="userInfo">
+                <div class="infoUser">
                     <div class="userImg"></div>
                     <div class="username">
                         <strong>
@@ -81,6 +81,11 @@
                         <i>
                             {{updatedAt}}
                         </i>
+                    </div>
+                </div>
+                <div class="options">
+                    <div class="deletePost">
+
                     </div>
                 </div>
             </div>
