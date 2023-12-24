@@ -33,6 +33,18 @@
             margin-top: 1em;
             margin-bottom: 1em;
         }
+        section.conteiner div.posts div.post div.infoUser{
+            display: flex;
+            margin-bottom: 15px;
+        }
+        section.conteiner div.posts div.post div.infoUser div.userImg{
+            width: 30px;
+            height: 30px;
+            border-radius: 50px;
+            background: #333;
+            margin-right: 1em;
+        }
+
     </style>
 </head>
 <body>
@@ -48,6 +60,9 @@
             {{#each data}}
                 <div class="post">
                     <div class="infoUser">
+                        <div class="userImg" id="userImg">
+
+                        </div>
                         <div class="userName">
                             <strong>
                                 {{nome}}
@@ -63,5 +78,23 @@
             {{/each}}
         </div>
     </section>
+    {{!-- <script>
+        const arrayOfColorFunctions = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f']
+
+        const randomColorString = '#'
+        function newRandomColorHex(){
+            for(let x=0; x<6; x++){
+
+                let index = Math.floor(Math.random() * 16)
+                let value = arrayOfColorFunctions[index]
+                
+                randomColorString += value
+            }
+
+        }
+        document.getElementById('userImg').style.background = newRandomColorHex()
+        console.log(newRandomColorHex())
+
+    </script> --}}
 </body>
 </html>
