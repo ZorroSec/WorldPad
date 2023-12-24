@@ -59,7 +59,7 @@ app.post('/add', upload.single('file'), (req, res)=>{
             Nome: nome,
             Publicacao: post,
             DataPost: data,
-            Path: file.path
+            Path: file.path + "." + file.originalname.split('.')[1]
 
         })
     }
