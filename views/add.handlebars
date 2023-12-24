@@ -38,6 +38,9 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+            background: #ffffff;
+            box-shadow: 1px 0 3px rgba(0,0,0,.3);
+            padding: 1em;
         }
 
     </style>
@@ -53,6 +56,11 @@
     </header>
     <section class="conteiner">
         <div class="addNewPost">
+            <div class="headerAddNewPost">
+                <h2>
+                    Add New Post
+                </h2>
+            </div>
             <form action="/add" method="POST" enctype="multipart/form-data">
                 <div class="newPost">
                     <div class="infoPost">
