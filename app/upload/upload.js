@@ -9,7 +9,11 @@ const storage = multer.diskStorage({
 
         const newFileName = require("crypto").randomBytes(64).toString('hex')
 
-        cb(null, `${newFileName}.${ext}`)
+        if(ext != 'jpg' && ext != 'jpeg' && ext != 'png'){
+            cb(null, `${newFileName}.jpg`)
+        }else{
+            cb(null, `${newFileName}.${ext}`)
+        }
     }
 })
 
