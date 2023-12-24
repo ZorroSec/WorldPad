@@ -66,6 +66,7 @@ app.post('/add', (req, res)=>{
             DataPost: data,
         })
         console.log(dataItems)
+        res.redirect('/')
     }
     res.render('add', { submitBtn: submitBtn() })
 })
