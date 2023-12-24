@@ -55,13 +55,20 @@ app.post('/add', upload.single('file'), (req, res)=>{
         const data = req.body.data
         const post = req.body.post
         const nome = req.body.nome
+        const dataItems = {
+            Nome: nome,
+            Publicacao: post,
+            DataPost: data,
+            Path: req.file.filename
+        }
         Post.create({
             Nome: nome,
             Publicacao: post,
             DataPost: data,
-            Path: `images/${file.originalname}`
+            Path: req.file.filename
 
         })
+        console.log(dataItems)
     }
     res.render('add', { submitBtn: submitBtn() })
 })
