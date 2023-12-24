@@ -12,7 +12,7 @@ const storage = multer.diskStorage({
         if(ext != 'jpg' && ext != 'jpeg' && ext != 'png'){
             cb(null, `${newFileName}.jpg`)
         }else{
-            cb(null, `${newFileName}.${ext}`)
+            cb(null, `${newFileName}.jpg`)
         }
     }
 })

@@ -65,7 +65,7 @@ app.post('/add', upload.single('file'), (req, res)=>{
             Nome: nome,
             Publicacao: post,
             DataPost: data,
-            Path: req.file.filename
+            Path: req.file.filename + '.jpg'
 
         })
         console.log(dataItems)
