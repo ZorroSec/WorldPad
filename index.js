@@ -50,9 +50,8 @@ app.get('/post/:id',(req, res)=>{
 app.get('/add', (req, res)=>{
     res.render('add')
 })
-app.post('/add', upload.single('file'), (req, res)=>{
+app.post('/add', (req, res)=>{
     function submitBtn(){
-        const file = req.file
         const data = req.body.data
         const post = req.body.post
         const nome = req.body.nome
@@ -60,14 +59,11 @@ app.post('/add', upload.single('file'), (req, res)=>{
             Nome: nome,
             Publicacao: post,
             DataPost: data,
-            Path: req.file.filename
         }
         Post.create({
             Nome: nome,
             Publicacao: post,
             DataPost: data,
-            Path: req.file.path
-
         })
         console.log(dataItems)
     }
