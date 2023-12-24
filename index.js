@@ -40,6 +40,7 @@ app.get('/post/:id',(req, res)=>{
         res.json({
             results: fields
         })
+        
     })
 })
 app.listen(process.env.PORT, (err)=>{
