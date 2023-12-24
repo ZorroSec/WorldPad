@@ -54,14 +54,14 @@ app.post('/add', (req, res)=>{
     function submitBtn(){
         const data = req.body.data
         const post = req.body.post
-        const nome = req.body.nome
+        const nome = req.body.title
         const dataItems = {
-            Nome: nome,
+            Title: title,
             Publicacao: post,
             DataPost: data,
         }
         Post.create({
-            Nome: nome,
+            Title: title,
             Publicacao: post,
             DataPost: data,
         })
