@@ -30,7 +30,7 @@ app.use('/public/js/', express.static('/public/js/'))
 //     console.log(data)
 // })
 app.get('/', (req,res)=>{
-    connection.query("SELECT * FROM posts", (results, fields)=>{
+    connection.query("SELECT * FROM posts ORDER BY id DESC", (results, fields)=>{
         res.render('home', { data: fields })
         console.log(fields)
     })
