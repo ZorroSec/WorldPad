@@ -6,12 +6,14 @@ const express = require("express")
 const bodyParser = require("body-parser")
 const { engine } = require("express-handlebars")
 const mysql = require("mysql2")
+const upload = require('./app/upload/upload')
 const connection = require("./connection/connection")
 const app = express()
 app.engine('handlebars', engine())
 app.set('view engine', 'handlebars')
 app.use(bodyParser.urlencoded({extended:false}))
 app.use(bodyParser.json())
+app.use('/images/', express.static('/images/'))
 app.use('/public/', express.static('/public/'))
 app.use('/public/css/', express.static('/public/css/'))
 app.use('/public/js/', express.static('/public/js/'))
@@ -42,6 +44,16 @@ app.get('/post/:id',(req, res)=>{
         })
         
     })
+})
+app.get('/add', (req, res)=>{
+    res.render('add')
+})
+app.post('/add', upload.single('file'), (req, res)=>{
+    function submitBtn(){
+        const file = req.file
+        console.log(file)
+    }
+    res.render('add', { submitBtn: submitBtn() })
 })
 app.listen(process.env.PORT, (err)=>{
     if(!err){
