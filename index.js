@@ -14,7 +14,7 @@ app.engine('handlebars', engine())
 app.set('view engine', 'handlebars')
 app.use(bodyParser.urlencoded({extended:false}))
 app.use(bodyParser.json())
-app.use('/images/', express.static('/images/'))
+app.use('views/images', express.static('views/images'))
 app.use('/public/', express.static('/public/'))
 app.use('/public/css/', express.static('/public/css/'))
 app.use('/public/js/', express.static('/public/js/'))
@@ -32,6 +32,7 @@ app.use('/public/js/', express.static('/public/js/'))
 app.get('/', (req,res)=>{
     connection.query("SELECT * FROM posts", (results, fields)=>{
         res.render('home', { data: fields })
+        console.log(fields)
     })
 })
 app.get('/post/:id',(req, res)=>{
@@ -65,7 +66,7 @@ app.post('/add', upload.single('file'), (req, res)=>{
             Nome: nome,
             Publicacao: post,
             DataPost: data,
-            Path: req.file.filename + '.jpg'
+            Path: req.file.path
 
         })
         console.log(dataItems)
