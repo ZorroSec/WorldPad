@@ -47,6 +47,27 @@
         a{
             text-decoration: none;
         }
+        div.options{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 1em;
+
+        }
+        div.postEdit a{
+            border-radius: 5px;
+            color: white;
+            padding: 10px 20px;
+            background-color: #008CBA;
+        }
+        div.deletePost a{
+            background-color: #f44336;
+            border-radius: 5px;
+            color: white;
+            padding: 10px 20px;
+            margin-right: 10px;
+
+        }
     </style>
     <title>Document</title>
 </head>
@@ -85,7 +106,14 @@
                 </div>
                 <div class="options">
                     <div class="deletePost">
-
+                        <a href="/delete/{{id}}">
+                            Deletar
+                        </a>
+                    </div>
+                    <div class="postEdit">
+                        <a href="/edit/{{id}}">
+                            Editar
+                        </a>
                     </div>
                 </div>
             </div>
