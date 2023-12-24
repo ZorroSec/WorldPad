@@ -8,6 +8,7 @@ const { engine } = require("express-handlebars")
 const mysql = require("mysql2")
 const upload = require('./app/upload/upload')
 const connection = require("./connection/connection")
+const Post = require("./post/post")
 const app = express()
 app.engine('handlebars', engine())
 app.set('view engine', 'handlebars')
@@ -54,7 +55,13 @@ app.post('/add', upload.single('file'), (req, res)=>{
         const data = req.body.data
         const post = req.body.post
         const nome = req.body.nome
-        console.log(file)
+        Post.create({
+            Nome: nome,
+            Publicacao: post,
+            DataPost: data,
+            Path: file.path
+
+        })
     }
     res.render('add', { submitBtn: submitBtn() })
 })
