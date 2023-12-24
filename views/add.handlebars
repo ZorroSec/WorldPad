@@ -58,32 +58,34 @@
     </header>
     <section class="conteiner">
         <div class="addNewPost">
-            <div class="newPost">
-                <div class="infoPost">
-                    <div class="infoOptionsPost">
-                        <div class="date">
-                            <input type="datetime-local" name="data" id="data">
+            <form action="/add" method="POST" enctype="multipart/form-data">
+                <div class="newPost">
+                    <div class="infoPost">
+                        <div class="infoOptionsPost">
+                            <div class="date">
+                                <input type="datetime-local" name="data" id="data">
+                            </div>
                         </div>
-                    </div>
-                    <div class="postContent">
-                        <textarea name="post" id="post" cols="30" rows="10"></textarea>
-                    </div>
-                    <div class="username">
-                        <div class="name">
-                            <input type="text" name="nome" id="nome" placeholder="nome">
+                        <div class="postContent">
+                            <textarea name="post" id="post" cols="30" rows="10"></textarea>
                         </div>
-                    </div>
-                    <div class="uploadImage">
-                        <div class="img">
-                            <label for="file">Carregar Imgem</label>
-                            <input type="file" name="file" id="file">
+                        <div class="username">
+                            <div class="name">
+                                <input type="text" name="nome" id="nome" placeholder="nome">
+                            </div>
                         </div>
-                    </div>
-                    <div class="submit">
-                        <input type="button" value="Enviar" name="sumbit" onclick="{{ submitBtn() }}">
+                        <div class="uploadImage">
+                            <div class="img">
+                                <label for="file">Carregar Imgem</label>
+                                <input type="file" name="file" id="file">
+                            </div>
+                        </div>
+                        <div class="submit">
+                            <input type="submit" value="Enviar" name="submit" onclick="{{ submitBtn }}">
+                        </div>
                     </div>
                 </div>
-            </div>
+            </form>
         </div>
     </section>
 </body>
